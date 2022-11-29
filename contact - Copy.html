@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gaurav Singh - Musician, Web Developer, Programmer </title> 
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+	<div class="sidebar">
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="intro.html">My Intro</a></li>
+				<li><a href="">Services</a></li> 
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="contact.html"><b>Contact Me</b></a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="main">
+    <div class="hamburger">
+      <img class="hb" src="images/hamburger.png" width="35px">
+      <img class="cn" src="images/cancel.png" width="30px">
+    </div>
+		<div class="contactform">
+			<form onsubmit="sendEmail(); reset();return false">
+        <h1>Contact me for a work/general enquires</h1>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Email Id">
+        <input type="text" id="phone" placeholder="phone no.">
+        <input type="message" id="message" placeholder="How can I help you">
+        <button type="submit" id="bb">Send</button>
+        
+      </form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src=" https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript">
+  function sendEmail() {
+    Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "ranagauravrikon@gmail.com",
+    Password : "281724361AAB9D062BC65B10F37D4199FD9B",
+    To : "gauravsinghkhon@gmail.com",
+    From : "ranagauravrikon@gmail.com",
+    Subject : "New Query",
+    Body : document.getElementById("message").value
+}).then(
+  message => alert(message)
+);
+  }
+</script>
+</body>
+</html>
